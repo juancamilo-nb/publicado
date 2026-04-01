@@ -13,16 +13,6 @@ runs:
     - name: Trigger private via repository_dispatch
       shell: bash
       run: |
-        curl -X POST \
-          -H "Authorization: Bearer $PRIVATE_TOKEN" \
-          -H "Accept: application/vnd.github+json" \
-          https://api.github.com/repos/juancamilo-nb/private-action/dispatches \
-          -d '{
-            "event_type": "run-private",
-            "client_payload": {
-              "username": "${{ inputs.username }}",
-              "image": "${{ inputs.image }}"
-            }
-          }'
-      env:
-        PRIVATE_TOKEN: ${{ secrets.PRIVATE_TOKEN }}
+        echo "oli"
+      # env:
+      #  PRIVATE_TOKEN: ${{ secrets.PRIVATE_TOKEN }}
